@@ -48,10 +48,9 @@ def _transform_data(data):
         column vector
     '''
 
-    MAX_NUMBER_OF_SAMPLES = 2000
+    MAX_NUMBER_OF_SAMPLES = 6000
     MIN_NUMBER_OF_SAMPLES = 20
     DATA_THRESHOLD = 10
-
     data_above_thresh = data[data > DATA_THRESHOLD].dropna().values
     n_samples = len(data_above_thresh)
     if n_samples < MIN_NUMBER_OF_SAMPLES:

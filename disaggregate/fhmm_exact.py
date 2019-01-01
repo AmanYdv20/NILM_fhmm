@@ -229,8 +229,7 @@ class FHMM():
             print(learnt_model[app].transmat_)
             print(learnt_model[app].means_)
             print(learnt_model[app].covars_)
-            
-            # Combining to make a AFHMM
+
         # Combining to make a AFHMM
         self.meters = []
         new_learnt_models = OrderedDict()
@@ -246,7 +245,8 @@ class FHMM():
             new_learnt_models[meter].covars_ = covars
             # UGLY! But works.
             self.meters.append(meter)
-
+            
+        print(new_learnt_models)
         learnt_model_combined = create_combined_hmm(new_learnt_models)
         self.individual = new_learnt_models
         self.model = learnt_model_combined
